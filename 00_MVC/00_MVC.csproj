@@ -164,6 +164,7 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Content\scss\bootstrap\scss\bootstrap-grid.scss" />
@@ -258,9 +259,12 @@
     <Content Include="Content\scss\bootstrap\scss\_variables.scss" />
     <Content Include="Content\scss\style.scss" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\contact.js" />
+    <Content Include="Scripts\contact.php" />
     <Content Include="Scripts\counterup\counterup.min.js" />
     <Content Include="Scripts\easing\easing.js" />
     <Content Include="Scripts\easing\easing.min.js" />
+    <Content Include="Scripts\jqBootstrapValidation.min.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -274,6 +278,7 @@
     <Content Include="Scripts\mail\contact.php" />
     <Content Include="Scripts\mail\jqBootstrapValidation.min.js" />
     <Content Include="Scripts\main.js" />
+    <Content Include="Scripts\miAjax.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\owlcarousel\assets\ajax-loader.gif" />
     <Content Include="Scripts\owlcarousel\assets\owl.carousel.css" />
