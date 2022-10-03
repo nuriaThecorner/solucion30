@@ -127,6 +127,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AutorController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -307,6 +308,11 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\owlcarousel\LICENSE" />
+    <Content Include="Views\Autor\Create.cshtml" />
+    <Content Include="Views\Autor\Delete.cshtml" />
+    <Content Include="Views\Autor\Details.cshtml" />
+    <Content Include="Views\Autor\Edit.cshtml" />
+    <Content Include="Views\Autor\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
