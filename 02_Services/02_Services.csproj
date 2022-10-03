@@ -51,9 +51,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AutoresService\AutoresServices.cs" />
+    <Compile Include="AutoresServices\AutoresService2.cs" />
+    <Compile Include="AutoresServices\AutoresService.cs" />
+    <Compile Include="CategoriasServices\CategoriasServices.cs" />
     <Compile Include="Class1.cs" />
+    <Compile Include="DiscograficaServices\DiscograficasService.cs" />
+    <Compile Include="DiscosServices\DiscosService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TemasServices\TemasService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\04_Data\04_Data.csproj">

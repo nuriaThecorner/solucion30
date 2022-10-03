@@ -85,6 +85,8 @@
     <Compile Include="Datos\Tema.cs">
       <DependentUpon>ProyectoMusicaDbContext.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\CategoriasAutoresDiscograficasDiscosViewModel.cs" />
+    <Compile Include="ViewModels\DiscosTemas.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

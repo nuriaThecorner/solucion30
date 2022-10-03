@@ -128,7 +128,11 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AutorController.cs" />
+    <Compile Include="Controllers\CategoriaController.cs" />
+    <Compile Include="Controllers\DiscoController.cs" />
+    <Compile Include="Controllers\DiscograficaController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\TemaController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -313,6 +317,26 @@
     <Content Include="Views\Autor\Details.cshtml" />
     <Content Include="Views\Autor\Edit.cshtml" />
     <Content Include="Views\Autor\Index.cshtml" />
+    <Content Include="Views\Discografica\Create.cshtml" />
+    <Content Include="Views\Discografica\Delete.cshtml" />
+    <Content Include="Views\Discografica\Details.cshtml" />
+    <Content Include="Views\Discografica\Edit.cshtml" />
+    <Content Include="Views\Discografica\Index.cshtml" />
+    <Content Include="Views\Categoria\Create.cshtml" />
+    <Content Include="Views\Categoria\Delete.cshtml" />
+    <Content Include="Views\Categoria\Details.cshtml" />
+    <Content Include="Views\Categoria\Edit.cshtml" />
+    <Content Include="Views\Categoria\Index.cshtml" />
+    <Content Include="Views\Disco\Create.cshtml" />
+    <Content Include="Views\Disco\Delete.cshtml" />
+    <Content Include="Views\Disco\Details.cshtml" />
+    <Content Include="Views\Disco\Edit.cshtml" />
+    <Content Include="Views\Disco\Index.cshtml" />
+    <Content Include="Views\Tema\Create.cshtml" />
+    <Content Include="Views\Tema\Delete.cshtml" />
+    <Content Include="Views\Tema\Details.cshtml" />
+    <Content Include="Views\Tema\Edit.cshtml" />
+    <Content Include="Views\Tema\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
