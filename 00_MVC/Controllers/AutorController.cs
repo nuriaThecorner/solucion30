@@ -13,7 +13,7 @@ namespace _00_MVC.Controllers
 {
     public class AutorController : Controller
     {
-        //private ProyectoMusicaDbContext db = new ProyectoMusicaDbContext();
+        private ProyectoMusicaDbContext db = new ProyectoMusicaDbContext();
 
 
         // GET: Autor
@@ -32,28 +32,67 @@ namespace _00_MVC.Controllers
         }
 
         // GET: Autores/Details/5
-        public ActionResult Details(int? id)
+        //public ActionResult Details(int? id)
+        //{
+        //    //Esto como estaba:
+        //    if (id == null)
+        //    {
+        //        return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
+        //    }
+
+        //    Autor autor = null;
+
+        //    AutoresService service = null;
+        //    service = new AutoresService();
+
+        //    autor = service.Detail(id.Value);
+
+        //    if (autor == null)
+        //    {
+        //        return HttpNotFound();
+        //    }
+        //    return View(autor);
+        //    //hasta aquí
+        //}
+
+
+        public ActionResult Details(int? id, bool? siguiente)
         {
-            //Esto como estaba:
             if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
-
             Autor autor = null;
-
-            AutoresService service = null;
-            service = new AutoresService();
-
-            autor = service.Detail(id.Value);
-
+            if (siguiente == null)
+            {
+                autor = db.Autor.Where(x => x.id == id.Value).FirstOrDefault();
+            }
+            else
+            {
+                if (siguiente.Value == true)
+                {
+                    autor = db.Autor.Where(x => x.id > id.Value).FirstOrDefault();
+                }
+                else
+                {
+                    IList<Autor> empleados = db.Autor.Where(x => x.id < id.Value).ToList();
+                    if (empleados != null && empleados.Count() > 0)
+                    {
+                        int? idEmpleado = empleados.Max(x => x.id);
+                        autor = db.Autor.Where(x => x.id == idEmpleado.Value).FirstOrDefault();
+                    }
+                }
+            }
             if (autor == null)
             {
-                return HttpNotFound();
+                autor = db.Autor.Where(x => x.id == id.Value).FirstOrDefault();
             }
             return View(autor);
-            //hasta aquí
         }
+
+
+
+
 
 
 
