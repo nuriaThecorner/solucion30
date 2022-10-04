@@ -56,10 +56,9 @@
                             <h5>@Html.DisplayFor(modelItem => item.Autor.nombre)</h5>
                             @* <p>@Html.DisplayFor(modelItem => item.Categoria.nombre)</p>*@
                             @*<a href="Temas.html" class="btn btn-primary py-2 px-4 my-2">Canciones</a>*@
-
-                            <p>@Html.ActionLink("Canciones del disco", "Index", "Tema", new { id = item.id, madre = "Disco", nombreMadre = Model.FirstOrDefault().nombre }, null)</p>
-                            <p class="btn btn-primary py-2 px-4 my-2">@Html.ActionLink("Detalles", "Details", new { id = item.id })</p>
-                            <h6>@Html.ActionLink("Borrar", "Delete", new { id = item.id })</h6>
+                        <span>@Html.ActionLink("Borrar", "Delete", new { id = item.id }) | @Html.ActionLink("Detalles", "Details", new { id = item.id })</span>
+                            <p class="btn btn-primary py-2 px-4 my-2">@Html.ActionLink("Canciones del disco", "Index", "Tema", new { id = item.id, madre = "Disco", nombreMadre = Model.FirstOrDefault().nombre }, null)</p>
+                            
 
                         </div>
                     </div>
