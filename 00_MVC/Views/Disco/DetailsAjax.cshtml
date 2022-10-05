@@ -1,15 +1,24 @@
 ﻿@model _04_Data.Datos.Disco
+ 
 
 @{
     ViewBag.Title = "Details";
-}
-
-
-<div id="DiscoOtraPartialView"> </div>
-
-@{
     int miId = Model.id + 1;
 }
+
+<h2>Details</h2>
+
+
+@*4.2.2.3.3	Con Ajax: te cagas de difícil*@
+<div id="DiscoOtraPartialView"></div>
+
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
+
+
 <script type="text/javascript">
 
     document.body.onload = function () {
@@ -17,7 +26,7 @@
     }
 
     function disco(param1, param2) {
-        var apiUrl = 'https://localhost:44359/api/discoapi';
+        var apiUrl = 'https://localhost:44359/Api/discos/';
 
         if (param1 > 0) {
             //apiUrl = apiUrl + "/" + param1 + "/" + siguente;

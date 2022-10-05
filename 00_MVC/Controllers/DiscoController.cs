@@ -19,26 +19,117 @@ namespace _00_MVC.Controllers
     {
         //private ProyectoMusicaDbContext db = new ProyectoMusicaDbContext();
 
-        // GET: Discos
-        public ActionResult Index(int? id, string madre, string nombreMadre)
+
+
+        // GET: Producto
+        public ActionResult Index(int? id, bool? categoria)
         {
-            //Necesitamos un IList<Disco> para pasárselo a la View
-            IList<Disco> discos = null;
-            //Creamos un objeto de la Clase DiscosService
-            DiscosService service = null;
-            service = new DiscosService();
-            //Lo utilizamos para llegar a su método List 
-            //Y, así rellenar nuestro IList<Disco> discos
-            discos = service.List(id, madre); //madre
 
-            ViewBag.Message = "";
-            if (madre != null && madre != "")
+            ProyectoMusicaDbContext db = new ProyectoMusicaDbContext();
+            var discos = db.Disco.Include(p => p.Categoria).Include(p => p.Autor);
+            //Si el método Index recibe un parámetro id != null y > 0
+            if (id != null && id > 0)
             {
-                ViewBag.Message = "Discos de " + madre + ": " + nombreMadre;
-
+                if (categoria != null)
+                {
+                    if (categoria == true)
+                    {
+                        discos = discos.Where(x => x.id_categoria == id);
+                        if (discos != null && discos.Count() > 0)
+                        {
+                            ViewBag.Message = "Discos de la Categoría: " + discos.FirstOrDefault().Categoria.nombre;
+                        }
+                    }
+                    else
+                    {
+                        discos = discos.Where(x => x.id_autor == id);
+                        if (discos != null && discos.Count() > 0)
+                        {
+                            ViewBag.Message = "Discos del Autor: " + discos.FirstOrDefault().Autor.nombre
+                                            //+ "Descripción: " + discos.FirstOrDefault().Autor.decripcion + " "
+                                            //+ discos.FirstOrDefault().Autor.imagen + " "
+                                            //+ discos.FirstOrDefault().Autor.spotify + " "
+                                            //+ discos.FirstOrDefault().Autor.twitter + " ";
+                                            ;
+                        }
+                    }
+                }
             }
-            return View(discos);
+            return View(discos.ToList());
         }
+
+
+
+
+
+
+        [HttpPost]
+        //[ValidateInput(false)]
+        public ActionResult _DiscoPartialView(Disco disco)
+        {
+            return View("_DiscoOtraPartialView", disco);
+        }
+
+
+        
+
+        //// GET: Producto
+        //public ActionResult Index(int? id, bool? disco)
+        //{
+
+        //    ProyectoMusicaDbContext db = new ProyectoMusicaDbContext();
+        //    var discos = db.Disco.Include(p => p.Categoria).Include(p => p.Autor);
+        //    //Si el método Index recibe un parámetro id != null y > 0
+        //    if (id != null && id > 0)
+        //    {
+        //        if (disco != null)
+        //        {
+        //            if (disco == true)
+        //            {
+        //                discos = discos.Where(x => x.id_categoria == id);
+        //                if (discos != null && discos.Count() > 0)
+        //                {
+        //                    ViewBag.Message = "Discos de la Categoría: " + discos.FirstOrDefault().Categoria.nombre;
+        //                }
+        //            }
+        //            else
+        //            {
+        //                discos = discos.Where(x => x.id_autor == id);
+        //                if (discos != null && discos.Count() > 0)
+        //                {
+        //                    ViewBag.Message = "Discos del Autor: " + discos.FirstOrDefault().Autor.nombre
+        //                                    + "Descripción: " + discos.FirstOrDefault().Autor.decripcion + " "
+        //                                    + discos.FirstOrDefault().Autor.imagen + " "
+        //                                    + discos.FirstOrDefault().Autor.spotify + " "
+        //                                    + discos.FirstOrDefault().Autor.twitter + " ";
+        //                }
+        //            }
+        //        }
+        //    }
+        //    return View(discos.ToList());
+        //}
+
+
+        //// GET: Discos
+        //public ActionResult Index(int? id, string madre, string nombreMadre)
+        //{
+        //    //Necesitamos un IList<Disco> para pasárselo a la View
+        //    IList<Disco> discos = null;
+        //    //Creamos un objeto de la Clase DiscosService
+        //    DiscosService service = null;
+        //    service = new DiscosService();
+        //    //Lo utilizamos para llegar a su método List 
+        //    //Y, así rellenar nuestro IList<Disco> discos
+        //    discos = service.List(id, madre); //madre
+
+        //    ViewBag.Message = "";
+        //    if (madre != null && madre != "")
+        //    {
+        //        ViewBag.Message = "Discos de " + madre + ": " + nombreMadre;
+
+        //    }
+        //    return View(discos);
+        //}
 
         // GET: Discos/Details/5
         public ActionResult Details(int? id)

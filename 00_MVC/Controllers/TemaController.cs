@@ -16,6 +16,18 @@ namespace _00_MVC.Controllers
     {
         //private ProyectoMusicaDbContext db = new ProyectoMusicaDbContext();
 
+
+
+        [HttpPost]
+        //[ValidateInput(false)]
+        public ActionResult _TemaPartialView(Tema tema)
+        {
+            return View("_TemaPartialView", tema);
+        }
+
+
+
+
         // GET: Temas
         public ActionResult Index(int? id, string madre, string nombreMadre)
         {

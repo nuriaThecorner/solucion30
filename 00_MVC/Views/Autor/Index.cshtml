@@ -88,6 +88,8 @@
                     @Html.ActionLink("Editar", "Edit", new { id = item.id }) |
                     @Html.ActionLink("Detalles", "Details", new { id = item.id }) |
                     @Html.ActionLink("Borrar", "Delete", new { id = item.id }) |
+                    @Html.ActionLink("Discos de este autor", "Index", "Disco", new { id = item.id, categoria = false }, null)
+
                     @*@Html.ActionLink("Discos de este Artista", "Index", "Disco", new { id = item.id, madre = "Autor", nombreMadre = Model.FirstOrDefault().nombre }, null)  |*@
 
                 </div>
