@@ -22,11 +22,12 @@
 
         <div class="text-center pb-2">
 
-            <p class="btn btn-default btn btn-primary py-2 px-4 my-2 ">
-                @Html.ActionLink("Añadir categoría", "Create")
-            </p>
-            <table class="table">
+
+            <table class="table tabcategorias">
                 <tr>
+                    <th>
+                        imagen
+                    </th>
                     <th>
                         @Html.DisplayNameFor(model => model.nombre)
                     </th>
@@ -36,6 +37,9 @@
                 @foreach (var item in Model)
                 {
                     <tr>
+                        <td>
+                            <img src="~/Content/img/genero.png" alt="genero">
+                        </td>
                         <td>
                             @Html.DisplayFor(modelItem => item.nombre)
                         </td>
@@ -49,6 +53,10 @@
                 }
 
             </table>
+
+            <p class="btn btn-default btn btn-primary py-2 px-4 my-2 ">
+                @Html.ActionLink("Añadir categoría", "Create")
+            </p>
         </div>
     </div>
 </div>

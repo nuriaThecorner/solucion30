@@ -19,14 +19,18 @@
 <div class="container-fluid py-5">
     <div class="container">
         <div class="row align-items-center">
+            <div class="col-lg-4 pb-2 pb-lg-0">
+                <img class="img-fluid w-100" src="https://i1.wp.com/thebestbrainpossible.com/wp-content/uploads/2016/08/rsz_1adobestock_68911612.jpg?ssl=1" alt="">
 
-            <div class="col-lg-9">
+
+            </div>
+            <div class="col-lg-8">
                 <span>Nombre canción: </span>
                 <span class="text-primary text-uppercase font-weight-bold artista">@Html.DisplayFor(model => model.nombre)</span>
                 <br />
                 @*<span>Disco: </span>
-                <span class="text-primary text-uppercase font-weight-bold artista">@Html.DisplayFor(model => model.Disco.nombre)</span>
-                <br />*@
+            <span class="text-primary text-uppercase font-weight-bold artista">@Html.DisplayFor(model => model.Disco.nombre)</span>
+            <br />*@
                 <span>Link: </span>
                 <span class="text-primary text-uppercase font-weight-bold artista"><a href="@Html.DisplayFor(model => model.link)" target="_blank" rel="noopener noreferrer">@Html.DisplayFor(model => model.link)</a></span>
                 <br />
@@ -36,12 +40,13 @@
                             <span></span>
                         </button>
                     </a>
+                    <h4 class="font-weight-bold m-0 ml-4">@Html.DisplayFor(model => model.nombre)</h4>
+
                 </div>
 
             </div>
 
         </div>
-        <br /><br />
         <p>
             @Html.ActionLink("Editar", "Edit", new { id = Model.id }) |
             @Html.ActionLink("Vovler a la lista", "Index")
