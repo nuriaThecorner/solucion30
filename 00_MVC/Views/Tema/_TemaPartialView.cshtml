@@ -28,7 +28,7 @@
                 <span class="text-primary text-uppercase font-weight-bold artista">@Html.DisplayFor(model => model.Disco.nombre)</span>
                 <br />*@
                 <span>Link: </span>
-                <span class="text-primary text-uppercase font-weight-bold artista"><a href="@Html.DisplayFor(model => model.link)" target="_blank" rel="noopener noreferrer">Link</a></span>
+                <span class="text-primary text-uppercase font-weight-bold artista"><a href="@Html.DisplayFor(model => model.link)" target="_blank" rel="noopener noreferrer">@Html.DisplayFor(model => model.link)</a></span>
                 <br />
                 <div class="d-flex align-items-center pt-2 ">
                     <a href="@Html.DisplayFor(model => model.link)" target="_blank" rel="noopener noreferrer">
